@@ -48,6 +48,9 @@ public class AutoTimer {
     @Scheduled(cron = "0 30 18 * * *")
     public void offWorkTimer () throws InterruptedException {
         log.info("offWorkTimer start!");
+        if (!getWorkingDay()){
+            log.info("老子今天不上班");
+        }
         Random r = new Random();
         long sleepTime = r.nextInt(1800 - 10 + 1) + 10;
         log.info("offWorkTimer sleepTime = {}", sleepTime);

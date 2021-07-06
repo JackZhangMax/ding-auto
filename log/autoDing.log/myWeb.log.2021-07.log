@@ -1,0 +1,296 @@
+2021-07-01 17:06:10.583 [main] INFO  com.zml.dingauto.DingAutoApplication - Starting DingAutoApplication v0.0.1-SNAPSHOT using Java 1.8.0_281 on DESKTOP-OADORHA with PID 852 (D:\work\ding-auto\target\ding-auto-0.0.1-SNAPSHOT.jar started by DESKTOP-OADORHA$ in D:\work\ding-auto-start)
+2021-07-01 17:06:10.583 [main] INFO  com.zml.dingauto.DingAutoApplication - No active profile set, falling back to default profiles: default
+2021-07-01 17:06:12.647 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 80 (http)
+2021-07-01 17:06:12.663 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-80"]
+2021-07-01 17:06:12.663 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-07-01 17:06:12.663 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-07-01 17:06:12.741 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-07-01 17:06:12.741 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2076 ms
+2021-07-01 17:06:13.335 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-80"]
+2021-07-01 17:06:13.381 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 80 (http) with context path ''
+2021-07-01 17:06:13.381 [main] INFO  com.zml.dingauto.DingAutoApplication - Started DingAutoApplication in 3.213 seconds (JVM running for 4.051)
+2021-07-01 17:06:13.381 [main] INFO  o.s.boot.availability.ApplicationAvailabilityBean - Application availability state LivenessState changed to CORRECT
+2021-07-01 17:06:13.381 [main] INFO  o.s.boot.availability.ApplicationAvailabilityBean - Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-07-01 17:28:23.759 [http-nio-80-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-01 17:28:23.760 [http-nio-80-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-07-01 17:28:23.761 [http-nio-80-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2021-07-01 18:30:01.710 [scheduling-1] INFO  com.zml.dingauto.service.AutoTimer - offWorkTimer start!
+2021-07-01 18:30:01.715 [scheduling-1] INFO  com.zml.dingauto.service.AutoTimer - offWorkTimer sleepTime = 1598
+2021-07-01 18:56:40.786 [scheduling-1] INFO  com.zml.dingauto.service.AutoTimer - offWorkTimer end!
+2021-07-01 18:56:40.799 [task-1] INFO  com.zml.dingauto.service.AutoService - ÈÎÎñ³õÊ¼»¯¡¤¡¤¡¤
+2021-07-01 18:56:40.799 [task-1] INFO  com.zml.dingauto.service.AutoService - 2021-07-01T18:56:40.799: ÈÎÎñ¿ªÊ¼!
+2021-07-01 18:56:40.799 [task-1] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ»½ÐÑÆÁÄ»¡¤¡¤¡¤
+2021-07-01 18:56:47.344 [task-1] INFO  com.zml.dingauto.service.AutoService - 2021-07-01T18:56:47.344: done!
+2021-07-01 18:56:50.929 [task-1] INFO  com.zml.dingauto.service.AutoService - 2021-07-01T18:56:50.929: done!
+2021-07-01 18:56:52.476 [task-1] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ»Øµ½Ö÷½çÃæ:
+2021-07-01 18:56:55.503 [task-1] INFO  com.zml.dingauto.service.AutoService - 2021-07-01T18:56:55.503: done!
+2021-07-01 18:56:57.055 [task-1] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ´ò¿ª¶¤¶¤:
+2021-07-01 18:57:13.159 [task-1] INFO  com.zml.dingauto.service.AutoService - 2021-07-01T18:57:13.159: done!
+2021-07-01 18:57:23.727 [task-1] INFO  com.zml.dingauto.service.AutoService - 2021-07-01T18:57:23.727: done!
+2021-07-01 18:57:31.441 [task-1] INFO  com.zml.dingauto.service.AutoService - 2021-07-01T18:57:31.441: done!
+2021-07-01 18:57:31.441 [task-1] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚÐ£Ñé´ò¿¨½á¹û
+2021-07-01 18:57:44.396 [task-1] INFO  com.zml.dingauto.service.AutoService - 2021-07-01T18:57:44.396: done!
+2021-07-01 18:57:45.157 [task-1] INFO  com.baidu.aip.client.BaseClient - get access_token success. current state: STATE_AIP_AUTH_OK
+2021-07-01 18:57:45.508 [task-1] INFO  com.zml.dingauto.service.AutoService - basicGeneral resp = {"words_result":[{"words":"ÉÏ°àO9:30"},{"words":"ÏÂ°à18:30"},{"words":"09:22ÒÑ´ò¿¨"},{"words":"18:57ÒÑ´ò¿¨¸üÐÂ´ò¿¨"}],"log_id":1410553204447457006,"words_result_num":4}
+2021-07-01 18:57:45.890 [task-1] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ×¼±¸½øÈë¶àÈÎÎñ½çÃæ:
+2021-07-01 18:57:56.985 [task-1] INFO  com.zml.dingauto.service.AutoService - 2021-07-01T18:57:56.985: done!
+2021-07-01 18:57:58.502 [task-1] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚÉ±ËÀ½ø³Ì:
+2021-07-01 18:58:02.548 [task-1] INFO  com.zml.dingauto.service.AutoService - 2021-07-01T18:58:02.548: done!
+2021-07-01 18:58:04.364 [task-1] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ×¼±¸ËøÆÁ:
+2021-07-01 18:58:15.447 [task-1] INFO  com.zml.dingauto.service.AutoService - 2021-07-01T18:58:15.447: done!
+2021-07-02 09:20:01.712 [scheduling-1] INFO  com.zml.dingauto.service.AutoTimer - startTimer start!
+2021-07-02 09:20:01.712 [scheduling-1] INFO  com.zml.dingauto.service.AutoTimer - startTimer sleepTime = 395
+2021-07-02 09:26:37.109 [scheduling-1] INFO  com.zml.dingauto.service.AutoTimer - startTimer end!
+2021-07-02 09:26:37.109 [task-2] INFO  com.zml.dingauto.service.AutoService - ÈÎÎñ³õÊ¼»¯¡¤¡¤¡¤
+2021-07-02 09:26:37.109 [task-2] INFO  com.zml.dingauto.service.AutoService - 2021-07-02T09:26:37.109: ÈÎÎñ¿ªÊ¼!
+2021-07-02 09:26:37.109 [task-2] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ»½ÐÑÆÁÄ»¡¤¡¤¡¤
+2021-07-02 09:26:43.036 [task-2] INFO  com.zml.dingauto.service.AutoService - 2021-07-02T09:26:43.036: done!
+2021-07-02 09:26:46.549 [task-2] INFO  com.zml.dingauto.service.AutoService - 2021-07-02T09:26:46.549: done!
+2021-07-02 09:26:48.092 [task-2] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ»Øµ½Ö÷½çÃæ:
+2021-07-02 09:26:51.111 [task-2] INFO  com.zml.dingauto.service.AutoService - 2021-07-02T09:26:51.111: done!
+2021-07-02 09:26:52.640 [task-2] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ´ò¿ª¶¤¶¤:
+2021-07-02 09:27:08.780 [task-2] INFO  com.zml.dingauto.service.AutoService - 2021-07-02T09:27:08.780: done!
+2021-07-02 09:27:19.500 [task-2] INFO  com.zml.dingauto.service.AutoService - 2021-07-02T09:27:19.500: done!
+2021-07-02 09:27:27.162 [task-2] INFO  com.zml.dingauto.service.AutoService - 2021-07-02T09:27:27.162: done!
+2021-07-02 09:27:27.162 [task-2] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚÐ£Ñé´ò¿¨½á¹û
+2021-07-02 09:27:40.076 [task-2] INFO  com.zml.dingauto.service.AutoService - 2021-07-02T09:27:40.076: done!
+2021-07-02 09:27:40.796 [task-2] INFO  com.baidu.aip.client.BaseClient - get access_token success. current state: STATE_AIP_AUTH_OK
+2021-07-02 09:27:41.794 [task-2] INFO  com.zml.dingauto.service.AutoService - basicGeneral resp = {"words_result":[{"words":"ÉÏ°àO9:30"},{"words":"ÏÂ°à18:30"},{"words":"09:27ÒÑ´ò¿¨"},{"words":"Î´´ò¿¨"}],"log_id":1410772130918257734,"words_result_num":4}
+2021-07-02 09:27:42.148 [task-2] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ×¼±¸½øÈë¶àÈÎÎñ½çÃæ:
+2021-07-02 09:28:02.332 [task-2] INFO  com.zml.dingauto.service.AutoService - 2021-07-02T09:28:02.332: done!
+2021-07-02 09:28:03.887 [task-2] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚÉ±ËÀ½ø³Ì:
+2021-07-02 09:28:07.933 [task-2] INFO  com.zml.dingauto.service.AutoService - 2021-07-02T09:28:07.933: done!
+2021-07-02 09:28:09.793 [task-2] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ×¼±¸ËøÆÁ:
+2021-07-02 09:28:20.889 [task-2] INFO  com.zml.dingauto.service.AutoService - 2021-07-02T09:28:20.889: done!
+2021-07-02 18:30:00.005 [scheduling-1] INFO  com.zml.dingauto.service.AutoTimer - offWorkTimer start!
+2021-07-02 18:30:00.011 [scheduling-1] INFO  com.zml.dingauto.service.AutoTimer - offWorkTimer sleepTime = 1641
+2021-07-02 18:57:21.435 [scheduling-1] INFO  com.zml.dingauto.service.AutoTimer - offWorkTimer end!
+2021-07-02 18:57:21.435 [task-3] INFO  com.zml.dingauto.service.AutoService - ÈÎÎñ³õÊ¼»¯¡¤¡¤¡¤
+2021-07-02 18:57:21.436 [task-3] INFO  com.zml.dingauto.service.AutoService - 2021-07-02T18:57:21.436: ÈÎÎñ¿ªÊ¼!
+2021-07-02 18:57:21.436 [task-3] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ»½ÐÑÆÁÄ»¡¤¡¤¡¤
+2021-07-02 18:57:27.111 [task-3] INFO  com.zml.dingauto.service.AutoService - 2021-07-02T18:57:27.111: done!
+2021-07-02 18:57:30.761 [task-3] INFO  com.zml.dingauto.service.AutoService - 2021-07-02T18:57:30.761: done!
+2021-07-02 18:57:32.307 [task-3] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ»Øµ½Ö÷½çÃæ:
+2021-07-02 18:57:35.337 [task-3] INFO  com.zml.dingauto.service.AutoService - 2021-07-02T18:57:35.337: done!
+2021-07-02 18:57:36.897 [task-3] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ´ò¿ª¶¤¶¤:
+2021-07-02 18:57:53.009 [task-3] INFO  com.zml.dingauto.service.AutoService - 2021-07-02T18:57:53.009: done!
+2021-07-02 18:58:03.957 [task-3] INFO  com.zml.dingauto.service.AutoService - 2021-07-02T18:58:03.957: done!
+2021-07-02 18:58:11.755 [task-3] INFO  com.zml.dingauto.service.AutoService - 2021-07-02T18:58:11.755: done!
+2021-07-02 18:58:11.755 [task-3] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚÐ£Ñé´ò¿¨½á¹û
+2021-07-02 18:58:24.729 [task-3] INFO  com.zml.dingauto.service.AutoService - 2021-07-02T18:58:24.729: done!
+2021-07-02 18:58:25.765 [task-3] INFO  com.baidu.aip.client.BaseClient - get access_token success. current state: STATE_AIP_AUTH_OK
+2021-07-02 18:58:26.607 [task-3] INFO  com.zml.dingauto.service.AutoService - basicGeneral resp = {"words_result":[{"words":"ÉÏ°àO9:30"},{"words":"ÏÂ°à18:30"},{"words":"09:27ÒÑ´ò¿¨"},{"words":"18:57ÒÑ´ò¿¨¸üÐÂ´ò¿¨"}],"log_id":1410915765186771053,"words_result_num":4}
+2021-07-02 18:58:27.006 [task-3] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ×¼±¸½øÈë¶àÈÎÎñ½çÃæ:
+2021-07-02 18:58:48.136 [task-3] INFO  com.zml.dingauto.service.AutoService - 2021-07-02T18:58:48.136: done!
+2021-07-02 18:58:49.655 [task-3] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚÉ±ËÀ½ø³Ì:
+2021-07-02 18:58:53.697 [task-3] INFO  com.zml.dingauto.service.AutoService - 2021-07-02T18:58:53.697: done!
+2021-07-02 18:58:55.574 [task-3] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ×¼±¸ËøÆÁ:
+2021-07-02 18:59:06.653 [task-3] INFO  com.zml.dingauto.service.AutoService - 2021-07-02T18:59:06.653: done!
+2021-07-03 09:20:00.008 [scheduling-1] INFO  com.zml.dingauto.service.AutoTimer - startTimer start!
+2021-07-03 09:20:00.008 [scheduling-1] INFO  com.zml.dingauto.service.AutoTimer - startTimer sleepTime = 391
+2021-07-03 09:26:31.354 [scheduling-1] INFO  com.zml.dingauto.service.AutoTimer - startTimer end!
+2021-07-03 09:26:31.354 [task-4] INFO  com.zml.dingauto.service.AutoService - ÈÎÎñ³õÊ¼»¯¡¤¡¤¡¤
+2021-07-03 09:26:31.354 [task-4] INFO  com.zml.dingauto.service.AutoService - 2021-07-03T09:26:31.354: ÈÎÎñ¿ªÊ¼!
+2021-07-03 09:26:31.354 [task-4] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ»½ÐÑÆÁÄ»¡¤¡¤¡¤
+2021-07-03 09:26:37.945 [task-4] INFO  com.zml.dingauto.service.AutoService - 2021-07-03T09:26:37.945: done!
+2021-07-03 09:26:41.573 [task-4] INFO  com.zml.dingauto.service.AutoService - 2021-07-03T09:26:41.573: done!
+2021-07-03 09:26:43.151 [task-4] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ»Øµ½Ö÷½çÃæ:
+2021-07-03 09:26:46.185 [task-4] INFO  com.zml.dingauto.service.AutoService - 2021-07-03T09:26:46.185: done!
+2021-07-03 09:26:47.829 [task-4] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ´ò¿ª¶¤¶¤:
+2021-07-03 09:27:03.972 [task-4] INFO  com.zml.dingauto.service.AutoService - 2021-07-03T09:27:03.972: done!
+2021-07-03 09:27:14.702 [task-4] INFO  com.zml.dingauto.service.AutoService - 2021-07-03T09:27:14.702: done!
+2021-07-03 09:27:22.333 [task-4] INFO  com.zml.dingauto.service.AutoService - 2021-07-03T09:27:22.333: done!
+2021-07-03 09:27:22.333 [task-4] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚÐ£Ñé´ò¿¨½á¹û
+2021-07-03 09:27:35.292 [task-4] INFO  com.zml.dingauto.service.AutoService - 2021-07-03T09:27:35.292: done!
+2021-07-03 09:27:35.812 [task-4] INFO  com.baidu.aip.client.BaseClient - get access_token success. current state: STATE_AIP_AUTH_OK
+2021-07-03 09:27:36.112 [task-4] INFO  com.zml.dingauto.service.AutoService - basicGeneral resp = {"words_result":[{"words":"¢Ù½ñÈÕÐÝÏ¢"}],"log_id":1411134496024698199,"words_result_num":1}
+2021-07-03 09:27:36.439 [task-4] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ×¼±¸½øÈë¶àÈÎÎñ½çÃæ:
+2021-07-03 09:27:48.550 [task-4] INFO  com.zml.dingauto.service.AutoService - 2021-07-03T09:27:48.550: done!
+2021-07-03 09:27:50.070 [task-4] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚÉ±ËÀ½ø³Ì:
+2021-07-03 09:27:54.101 [task-4] INFO  com.zml.dingauto.service.AutoService - 2021-07-03T09:27:54.101: done!
+2021-07-03 09:27:55.966 [task-4] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ×¼±¸ËøÆÁ:
+2021-07-03 09:28:07.076 [task-4] INFO  com.zml.dingauto.service.AutoService - 2021-07-03T09:28:07.076: done!
+2021-07-03 18:30:00.009 [scheduling-1] INFO  com.zml.dingauto.service.AutoTimer - offWorkTimer start!
+2021-07-03 18:30:00.009 [scheduling-1] INFO  com.zml.dingauto.service.AutoTimer - offWorkTimer sleepTime = 320
+2021-07-03 18:35:20.354 [scheduling-1] INFO  com.zml.dingauto.service.AutoTimer - offWorkTimer end!
+2021-07-03 18:35:20.354 [task-5] INFO  com.zml.dingauto.service.AutoService - ÈÎÎñ³õÊ¼»¯¡¤¡¤¡¤
+2021-07-03 18:35:20.354 [task-5] INFO  com.zml.dingauto.service.AutoService - 2021-07-03T18:35:20.354: ÈÎÎñ¿ªÊ¼!
+2021-07-03 18:35:20.354 [task-5] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ»½ÐÑÆÁÄ»¡¤¡¤¡¤
+2021-07-03 18:35:27.084 [task-5] INFO  com.zml.dingauto.service.AutoService - 2021-07-03T18:35:27.084: done!
+2021-07-03 18:35:30.705 [task-5] INFO  com.zml.dingauto.service.AutoService - 2021-07-03T18:35:30.705: done!
+2021-07-03 18:35:32.285 [task-5] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ»Øµ½Ö÷½çÃæ:
+2021-07-03 18:35:35.296 [task-5] INFO  com.zml.dingauto.service.AutoService - 2021-07-03T18:35:35.296: done!
+2021-07-03 18:35:37.025 [task-5] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ´ò¿ª¶¤¶¤:
+2021-07-03 18:35:53.156 [task-5] INFO  com.zml.dingauto.service.AutoService - 2021-07-03T18:35:53.156: done!
+2021-07-03 18:36:03.796 [task-5] INFO  com.zml.dingauto.service.AutoService - 2021-07-03T18:36:03.796: done!
+2021-07-03 18:36:11.448 [task-5] INFO  com.zml.dingauto.service.AutoService - 2021-07-03T18:36:11.448: done!
+2021-07-03 18:36:11.448 [task-5] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚÐ£Ñé´ò¿¨½á¹û
+2021-07-03 18:36:24.322 [task-5] INFO  com.zml.dingauto.service.AutoService - 2021-07-03T18:36:24.322: done!
+2021-07-03 18:36:24.840 [task-5] INFO  com.baidu.aip.client.BaseClient - get access_token success. current state: STATE_AIP_AUTH_OK
+2021-07-03 18:36:25.084 [task-5] INFO  com.zml.dingauto.service.AutoService - basicGeneral resp = {"words_result":[{"words":"¢Ù½ñÈÕÐÝÏ¢"}],"log_id":1411272611443728304,"words_result_num":1}
+2021-07-03 18:36:25.441 [task-5] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ×¼±¸½øÈë¶àÈÎÎñ½çÃæ:
+2021-07-03 18:36:44.608 [task-5] INFO  com.zml.dingauto.service.AutoService - 2021-07-03T18:36:44.608: done!
+2021-07-03 18:36:46.129 [task-5] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚÉ±ËÀ½ø³Ì:
+2021-07-03 18:36:50.168 [task-5] INFO  com.zml.dingauto.service.AutoService - 2021-07-03T18:36:50.168: done!
+2021-07-03 18:36:52.057 [task-5] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ×¼±¸ËøÆÁ:
+2021-07-03 18:37:03.180 [task-5] INFO  com.zml.dingauto.service.AutoService - 2021-07-03T18:37:03.180: done!
+2021-07-04 09:20:00.002 [scheduling-1] INFO  com.zml.dingauto.service.AutoTimer - startTimer start!
+2021-07-04 09:20:00.002 [scheduling-1] INFO  com.zml.dingauto.service.AutoTimer - startTimer sleepTime = 188
+2021-07-04 09:23:08.399 [scheduling-1] INFO  com.zml.dingauto.service.AutoTimer - startTimer end!
+2021-07-04 09:23:08.399 [task-6] INFO  com.zml.dingauto.service.AutoService - ÈÎÎñ³õÊ¼»¯¡¤¡¤¡¤
+2021-07-04 09:23:08.399 [task-6] INFO  com.zml.dingauto.service.AutoService - 2021-07-04T09:23:08.399: ÈÎÎñ¿ªÊ¼!
+2021-07-04 09:23:08.399 [task-6] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ»½ÐÑÆÁÄ»¡¤¡¤¡¤
+2021-07-04 09:23:14.433 [task-6] INFO  com.zml.dingauto.service.AutoService - 2021-07-04T09:23:14.433: done!
+2021-07-04 09:23:18.649 [task-6] INFO  com.zml.dingauto.service.AutoService - 2021-07-04T09:23:18.649: done!
+2021-07-04 09:23:20.265 [task-6] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ»Øµ½Ö÷½çÃæ:
+2021-07-04 09:23:23.291 [task-6] INFO  com.zml.dingauto.service.AutoService - 2021-07-04T09:23:23.291: done!
+2021-07-04 09:23:24.835 [task-6] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ´ò¿ª¶¤¶¤:
+2021-07-04 09:23:41.021 [task-6] INFO  com.zml.dingauto.service.AutoService - 2021-07-04T09:23:41.021: done!
+2021-07-04 09:23:51.937 [task-6] INFO  com.zml.dingauto.service.AutoService - 2021-07-04T09:23:51.937: done!
+2021-07-04 09:23:59.551 [task-6] INFO  com.zml.dingauto.service.AutoService - 2021-07-04T09:23:59.551: done!
+2021-07-04 09:23:59.551 [task-6] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚÐ£Ñé´ò¿¨½á¹û
+2021-07-04 09:24:12.539 [task-6] INFO  com.zml.dingauto.service.AutoService - 2021-07-04T09:24:12.539: done!
+2021-07-04 09:24:12.946 [task-6] INFO  com.baidu.aip.client.BaseClient - get access_token success. current state: STATE_AIP_AUTH_OK
+2021-07-04 09:24:13.228 [task-6] INFO  com.zml.dingauto.service.AutoService - basicGeneral resp = {"words_result":[{"words":"¢Ù½ñÈÕÐÝÏ¢"}],"log_id":1411496033455034351,"words_result_num":1}
+2021-07-04 09:24:13.553 [task-6] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ×¼±¸½øÈë¶àÈÎÎñ½çÃæ:
+2021-07-04 09:24:28.689 [task-6] INFO  com.zml.dingauto.service.AutoService - 2021-07-04T09:24:28.689: done!
+2021-07-04 09:24:30.211 [task-6] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚÉ±ËÀ½ø³Ì:
+2021-07-04 09:24:34.252 [task-6] INFO  com.zml.dingauto.service.AutoService - 2021-07-04T09:24:34.252: done!
+2021-07-04 09:24:36.177 [task-6] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ×¼±¸ËøÆÁ:
+2021-07-04 09:24:47.280 [task-6] INFO  com.zml.dingauto.service.AutoService - 2021-07-04T09:24:47.280: done!
+2021-07-04 18:30:00.011 [scheduling-1] INFO  com.zml.dingauto.service.AutoTimer - offWorkTimer start!
+2021-07-04 18:30:00.011 [scheduling-1] INFO  com.zml.dingauto.service.AutoTimer - offWorkTimer sleepTime = 1775
+2021-07-04 18:59:35.399 [scheduling-1] INFO  com.zml.dingauto.service.AutoTimer - offWorkTimer end!
+2021-07-04 18:59:35.399 [task-7] INFO  com.zml.dingauto.service.AutoService - ÈÎÎñ³õÊ¼»¯¡¤¡¤¡¤
+2021-07-04 18:59:35.399 [task-7] INFO  com.zml.dingauto.service.AutoService - 2021-07-04T18:59:35.399: ÈÎÎñ¿ªÊ¼!
+2021-07-04 18:59:35.399 [task-7] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ»½ÐÑÆÁÄ»¡¤¡¤¡¤
+2021-07-04 18:59:41.514 [task-7] INFO  com.zml.dingauto.service.AutoService - 2021-07-04T18:59:41.514: done!
+2021-07-04 18:59:45.072 [task-7] INFO  com.zml.dingauto.service.AutoService - 2021-07-04T18:59:45.072: done!
+2021-07-04 18:59:46.609 [task-7] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ»Øµ½Ö÷½çÃæ:
+2021-07-04 18:59:49.650 [task-7] INFO  com.zml.dingauto.service.AutoService - 2021-07-04T18:59:49.650: done!
+2021-07-04 18:59:51.265 [task-7] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ´ò¿ª¶¤¶¤:
+2021-07-04 19:00:07.410 [task-7] INFO  com.zml.dingauto.service.AutoService - 2021-07-04T19:00:07.410: done!
+2021-07-04 19:00:18.053 [task-7] INFO  com.zml.dingauto.service.AutoService - 2021-07-04T19:00:18.053: done!
+2021-07-04 19:00:25.779 [task-7] INFO  com.zml.dingauto.service.AutoService - 2021-07-04T19:00:25.779: done!
+2021-07-04 19:00:25.779 [task-7] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚÐ£Ñé´ò¿¨½á¹û
+2021-07-04 19:00:38.682 [task-7] INFO  com.zml.dingauto.service.AutoService - 2021-07-04T19:00:38.682: done!
+2021-07-04 19:00:39.454 [task-7] INFO  com.baidu.aip.client.BaseClient - get access_token success. current state: STATE_AIP_AUTH_OK
+2021-07-04 19:00:40.327 [task-7] INFO  com.zml.dingauto.service.AutoService - basicGeneral resp = {"words_result":[{"words":"¢Ù½ñÈÕÐÝÏ¢"}],"log_id":1411641102021922989,"words_result_num":1}
+2021-07-04 19:00:40.685 [task-7] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ×¼±¸½øÈë¶àÈÎÎñ½çÃæ:
+2021-07-04 19:00:53.804 [task-7] INFO  com.zml.dingauto.service.AutoService - 2021-07-04T19:00:53.804: done!
+2021-07-04 19:00:55.355 [task-7] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚÉ±ËÀ½ø³Ì:
+2021-07-04 19:00:59.399 [task-7] INFO  com.zml.dingauto.service.AutoService - 2021-07-04T19:00:59.399: done!
+2021-07-04 19:01:01.339 [task-7] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ×¼±¸ËøÆÁ:
+2021-07-04 19:01:12.451 [task-7] INFO  com.zml.dingauto.service.AutoService - 2021-07-04T19:01:12.451: done!
+2021-07-05 09:20:00.014 [scheduling-1] INFO  com.zml.dingauto.service.AutoTimer - startTimer start!
+2021-07-05 09:20:00.014 [scheduling-1] INFO  com.zml.dingauto.service.AutoTimer - startTimer sleepTime = 194
+2021-07-05 09:23:14.420 [scheduling-1] INFO  com.zml.dingauto.service.AutoTimer - startTimer end!
+2021-07-05 09:23:14.420 [task-8] INFO  com.zml.dingauto.service.AutoService - ÈÎÎñ³õÊ¼»¯¡¤¡¤¡¤
+2021-07-05 09:23:14.420 [task-8] INFO  com.zml.dingauto.service.AutoService - 2021-07-05T09:23:14.420: ÈÎÎñ¿ªÊ¼!
+2021-07-05 09:23:14.420 [task-8] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ»½ÐÑÆÁÄ»¡¤¡¤¡¤
+2021-07-05 09:23:21.318 [task-8] INFO  com.zml.dingauto.service.AutoService - 2021-07-05T09:23:21.318: done!
+2021-07-05 09:23:25.102 [task-8] INFO  com.zml.dingauto.service.AutoService - 2021-07-05T09:23:25.102: done!
+2021-07-05 09:23:26.680 [task-8] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ»Øµ½Ö÷½çÃæ:
+2021-07-05 09:23:29.719 [task-8] INFO  com.zml.dingauto.service.AutoService - 2021-07-05T09:23:29.719: done!
+2021-07-05 09:23:31.261 [task-8] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ´ò¿ª¶¤¶¤:
+2021-07-05 09:23:47.449 [task-8] INFO  com.zml.dingauto.service.AutoService - 2021-07-05T09:23:47.449: done!
+2021-07-05 09:23:58.431 [task-8] INFO  com.zml.dingauto.service.AutoService - 2021-07-05T09:23:58.431: done!
+2021-07-05 09:24:06.007 [task-8] INFO  com.zml.dingauto.service.AutoService - 2021-07-05T09:24:06.007: done!
+2021-07-05 09:24:06.007 [task-8] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚÐ£Ñé´ò¿¨½á¹û
+2021-07-05 09:24:19.018 [task-8] INFO  com.zml.dingauto.service.AutoService - 2021-07-05T09:24:19.018: done!
+2021-07-05 09:24:19.702 [task-8] INFO  com.baidu.aip.client.BaseClient - get access_token success. current state: STATE_AIP_AUTH_OK
+2021-07-05 09:24:20.384 [task-8] INFO  com.zml.dingauto.service.AutoService - basicGeneral resp = {"words_result":[{"words":"ÉÏ°àO9:30"},{"words":"ÏÂ°à18:30"},{"words":"09:23ÒÑ´ò¿¨"},{"words":"Î´´ò¿¨"}],"log_id":1411858451317990481,"words_result_num":4}
+2021-07-05 09:24:20.702 [task-8] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ×¼±¸½øÈë¶àÈÎÎñ½çÃæ:
+2021-07-05 09:24:34.852 [task-8] INFO  com.zml.dingauto.service.AutoService - 2021-07-05T09:24:34.852: done!
+2021-07-05 09:24:36.378 [task-8] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚÉ±ËÀ½ø³Ì:
+2021-07-05 09:24:40.434 [task-8] INFO  com.zml.dingauto.service.AutoService - 2021-07-05T09:24:40.434: done!
+2021-07-05 09:24:42.352 [task-8] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ×¼±¸ËøÆÁ:
+2021-07-05 09:24:53.472 [task-8] INFO  com.zml.dingauto.service.AutoService - 2021-07-05T09:24:53.472: done!
+2021-07-05 18:30:00.004 [scheduling-1] INFO  com.zml.dingauto.service.AutoTimer - offWorkTimer start!
+2021-07-05 18:30:00.006 [scheduling-1] INFO  com.zml.dingauto.service.AutoTimer - offWorkTimer sleepTime = 1305
+2021-07-05 18:51:45.369 [scheduling-1] INFO  com.zml.dingauto.service.AutoTimer - offWorkTimer end!
+2021-07-05 18:51:45.370 [task-9] INFO  com.zml.dingauto.service.AutoService - ÈÎÎñ³õÊ¼»¯¡¤¡¤¡¤
+2021-07-05 18:51:45.370 [task-9] INFO  com.zml.dingauto.service.AutoService - 2021-07-05T18:51:45.370: ÈÎÎñ¿ªÊ¼!
+2021-07-05 18:51:45.370 [task-9] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ»½ÐÑÆÁÄ»¡¤¡¤¡¤
+2021-07-05 18:51:51.415 [task-9] INFO  com.zml.dingauto.service.AutoService - 2021-07-05T18:51:51.415: done!
+2021-07-05 18:51:54.992 [task-9] INFO  com.zml.dingauto.service.AutoService - 2021-07-05T18:51:54.992: done!
+2021-07-05 18:51:56.597 [task-9] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ»Øµ½Ö÷½çÃæ:
+2021-07-05 18:51:59.610 [task-9] INFO  com.zml.dingauto.service.AutoService - 2021-07-05T18:51:59.610: done!
+2021-07-05 18:52:01.163 [task-9] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ´ò¿ª¶¤¶¤:
+2021-07-05 18:52:17.346 [task-9] INFO  com.zml.dingauto.service.AutoService - 2021-07-05T18:52:17.346: done!
+2021-07-05 18:52:27.953 [task-9] INFO  com.zml.dingauto.service.AutoService - 2021-07-05T18:52:27.953: done!
+2021-07-05 18:52:35.756 [task-9] INFO  com.zml.dingauto.service.AutoService - 2021-07-05T18:52:35.756: done!
+2021-07-05 18:52:35.756 [task-9] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚÐ£Ñé´ò¿¨½á¹û
+2021-07-05 18:52:48.789 [task-9] INFO  com.zml.dingauto.service.AutoService - 2021-07-05T18:52:48.789: done!
+2021-07-05 18:52:49.388 [task-9] INFO  com.baidu.aip.client.BaseClient - get access_token success. current state: STATE_AIP_AUTH_OK
+2021-07-05 18:52:49.687 [task-9] INFO  com.zml.dingauto.service.AutoService - basicGeneral resp = {"words_result":[{"words":"ÉÏ°àO9:30"},{"words":"ÏÂ°à18:30"},{"words":"09:23ÒÑ´ò¿¨"},{"words":"18:52ÒÑ´ò¿¨¸üÐÂ´ò¿¨"}],"log_id":1412001516593680696,"words_result_num":4}
+2021-07-05 18:52:50.011 [task-9] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ×¼±¸½øÈë¶àÈÎÎñ½çÃæ:
+2021-07-05 18:53:01.119 [task-9] INFO  com.zml.dingauto.service.AutoService - 2021-07-05T18:53:01.119: done!
+2021-07-05 18:53:02.633 [task-9] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚÉ±ËÀ½ø³Ì:
+2021-07-05 18:53:06.680 [task-9] INFO  com.zml.dingauto.service.AutoService - 2021-07-05T18:53:06.680: done!
+2021-07-05 18:53:08.617 [task-9] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ×¼±¸ËøÆÁ:
+2021-07-05 18:53:19.719 [task-9] INFO  com.zml.dingauto.service.AutoService - 2021-07-05T18:53:19.719: done!
+2021-07-06 09:20:00.012 [scheduling-1] INFO  com.zml.dingauto.service.AutoTimer - startTimer start!
+2021-07-06 09:20:00.012 [scheduling-1] INFO  com.zml.dingauto.service.AutoTimer - startTimer sleepTime = 247
+2021-07-06 09:24:07.405 [scheduling-1] INFO  com.zml.dingauto.service.AutoTimer - startTimer end!
+2021-07-06 09:24:07.407 [task-10] INFO  com.zml.dingauto.service.AutoService - ÈÎÎñ³õÊ¼»¯¡¤¡¤¡¤
+2021-07-06 09:24:07.407 [task-10] INFO  com.zml.dingauto.service.AutoService - 2021-07-06T09:24:07.407: ÈÎÎñ¿ªÊ¼!
+2021-07-06 09:24:07.407 [task-10] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ»½ÐÑÆÁÄ»¡¤¡¤¡¤
+2021-07-06 09:24:14.191 [task-10] INFO  com.zml.dingauto.service.AutoService - 2021-07-06T09:24:14.191: done!
+2021-07-06 09:24:17.736 [task-10] INFO  com.zml.dingauto.service.AutoService - 2021-07-06T09:24:17.736: done!
+2021-07-06 09:24:19.345 [task-10] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ»Øµ½Ö÷½çÃæ:
+2021-07-06 09:24:22.381 [task-10] INFO  com.zml.dingauto.service.AutoService - 2021-07-06T09:24:22.381: done!
+2021-07-06 09:24:23.920 [task-10] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ´ò¿ª¶¤¶¤:
+2021-07-06 09:24:40.080 [task-10] INFO  com.zml.dingauto.service.AutoService - 2021-07-06T09:24:40.080: done!
+2021-07-06 09:24:50.724 [task-10] INFO  com.zml.dingauto.service.AutoService - 2021-07-06T09:24:50.724: done!
+2021-07-06 09:24:58.568 [task-10] INFO  com.zml.dingauto.service.AutoService - 2021-07-06T09:24:58.568: done!
+2021-07-06 09:24:58.568 [task-10] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚÐ£Ñé´ò¿¨½á¹û
+2021-07-06 09:25:11.575 [task-10] INFO  com.zml.dingauto.service.AutoService - 2021-07-06T09:25:11.575: done!
+2021-07-06 09:25:12.410 [task-10] INFO  com.baidu.aip.client.BaseClient - get access_token success. current state: STATE_AIP_AUTH_OK
+2021-07-06 09:25:12.965 [task-10] INFO  com.zml.dingauto.service.AutoService - basicGeneral resp = {"words_result":[{"words":"ÉÏ°àO9:30"},{"words":"ÏÂ°à18:30"},{"words":"09:24ÒÑ´ò¿¨"},{"words":"Î´´ò¿¨"}],"log_id":1412221059940751655,"words_result_num":4}
+2021-07-06 09:25:13.341 [task-10] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ×¼±¸½øÈë¶àÈÎÎñ½çÃæ:
+2021-07-06 09:25:26.472 [task-10] INFO  com.zml.dingauto.service.AutoService - 2021-07-06T09:25:26.472: done!
+2021-07-06 09:25:28.007 [task-10] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚÉ±ËÀ½ø³Ì:
+2021-07-06 09:25:32.058 [task-10] INFO  com.zml.dingauto.service.AutoService - 2021-07-06T09:25:32.058: done!
+2021-07-06 09:25:33.955 [task-10] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ×¼±¸ËøÆÁ:
+2021-07-06 09:25:45.079 [task-10] INFO  com.zml.dingauto.service.AutoService - 2021-07-06T09:25:45.079: done!
+2021-07-06 11:31:37.238 [main] INFO  com.zml.dingauto.DingAutoApplication - Starting DingAutoApplication using Java 1.8.0_281 on DESKTOP-OADORHA with PID 23960 (D:\work\ding-auto\target\classes started by a in D:\work\ding-auto)
+2021-07-06 11:31:37.241 [main] INFO  com.zml.dingauto.DingAutoApplication - No active profile set, falling back to default profiles: default
+2021-07-06 11:31:37.961 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 801 (http)
+2021-07-06 11:31:37.969 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-801"]
+2021-07-06 11:31:37.969 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-07-06 11:31:37.969 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-07-06 11:31:38.032 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-07-06 11:31:38.032 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 757 ms
+2021-07-06 11:31:38.314 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-801"]
+2021-07-06 11:31:38.341 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 801 (http) with context path ''
+2021-07-06 11:31:38.351 [main] INFO  com.zml.dingauto.DingAutoApplication - Started DingAutoApplication in 1.419 seconds (JVM running for 3.314)
+2021-07-06 11:31:38.352 [main] INFO  o.s.boot.availability.ApplicationAvailabilityBean - Application availability state LivenessState changed to CORRECT
+2021-07-06 11:31:38.353 [main] INFO  o.s.boot.availability.ApplicationAvailabilityBean - Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-07-06 11:31:52.038 [http-nio-801-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-06 11:31:52.038 [http-nio-801-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-07-06 11:31:52.039 [http-nio-801-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2021-07-06 11:32:22.079 [http-nio-801-exec-3] INFO  com.zml.dingauto.controller.AutoController - start ip: 127.0.0.1
+2021-07-06 11:32:23.707 [task-1] INFO  com.zml.dingauto.service.AutoService - å·¥ä½œæ—¥ç±»åž‹:true
+2021-07-06 11:36:19.755 [http-nio-80-exec-2] INFO  com.zml.dingauto.controller.AutoController - start ip: 127.0.0.1
+2021-07-06 11:36:19.758 [task-11] INFO  com.zml.dingauto.service.AutoService - ÈÎÎñ³õÊ¼»¯¡¤¡¤¡¤
+2021-07-06 11:36:19.758 [task-11] INFO  com.zml.dingauto.service.AutoService - 2021-07-06T11:36:19.758: ÈÎÎñ¿ªÊ¼!
+2021-07-06 11:36:19.758 [task-11] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ»½ÐÑÆÁÄ»¡¤¡¤¡¤
+2021-07-06 11:36:25.758 [task-11] INFO  com.zml.dingauto.service.AutoService - 2021-07-06T11:36:25.758: done!
+2021-07-06 11:36:29.665 [task-11] INFO  com.zml.dingauto.service.AutoService - 2021-07-06T11:36:29.665: done!
+2021-07-06 11:36:31.619 [task-11] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ»Øµ½Ö÷½çÃæ:
+2021-07-06 11:36:34.642 [task-11] INFO  com.zml.dingauto.service.AutoService - 2021-07-06T11:36:34.642: done!
+2021-07-06 11:36:36.229 [task-11] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ´ò¿ª¶¤¶¤:
+2021-07-06 11:36:52.370 [task-11] INFO  com.zml.dingauto.service.AutoService - 2021-07-06T11:36:52.370: done!
+2021-07-06 11:37:02.644 [task-11] INFO  com.zml.dingauto.service.AutoService - 2021-07-06T11:37:02.644: done!
+2021-07-06 11:37:10.222 [task-11] INFO  com.zml.dingauto.service.AutoService - 2021-07-06T11:37:10.222: done!
+2021-07-06 11:37:10.222 [task-11] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚÐ£Ñé´ò¿¨½á¹û
+2021-07-06 11:37:23.325 [task-11] INFO  com.zml.dingauto.service.AutoService - 2021-07-06T11:37:23.325: done!
+2021-07-06 11:37:23.823 [task-11] INFO  com.baidu.aip.client.BaseClient - get access_token success. current state: STATE_AIP_AUTH_OK
+2021-07-06 11:37:24.261 [task-11] INFO  com.zml.dingauto.service.AutoService - basicGeneral resp = {"words_result":[{"words":"ÊÖ»ú¿ËÂ¡"},{"words":"ÖÇÄÜÒ£¿Ø"},{"words":"WPS Office"}],"log_id":1412254326269575536,"words_result_num":3}
+2021-07-06 11:37:24.553 [task-11] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ×¼±¸½øÈë¶àÈÎÎñ½çÃæ:
+2021-07-06 11:37:35.643 [task-11] INFO  com.zml.dingauto.service.AutoService - 2021-07-06T11:37:35.643: done!
+2021-07-06 11:37:37.163 [task-11] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚÉ±ËÀ½ø³Ì:
+2021-07-06 11:37:41.200 [task-11] INFO  com.zml.dingauto.service.AutoService - 2021-07-06T11:37:41.200: done!
+2021-07-06 11:37:43.027 [task-11] INFO  com.zml.dingauto.service.AutoService - ÕýÔÚ×¼±¸ËøÆÁ:
+2021-07-06 11:37:54.132 [task-11] INFO  com.zml.dingauto.service.AutoService - 2021-07-06T11:37:54.132: done!

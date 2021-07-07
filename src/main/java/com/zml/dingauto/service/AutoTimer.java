@@ -39,7 +39,12 @@ public class AutoTimer {
         // 结束进程通知
         LocalDateTime dateTime = LocalDateTime.now();
         dateTime.plusSeconds(sleepTime).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-        HttpUtil.get("https://api.day.app/w8LtxK8JtqnF6LoyJrALg8/打卡任务初始化/预计在" + dateTime.plusSeconds(sleepTime).format(DateTimeFormatter.ofPattern("HH:mm:ss")) + "开始");
+        try {
+            HttpUtil.get("https://api.day.app/w8LtxK8JtqnF6LoyJrALg8/打卡任务初始化/预计在" + dateTime.plusSeconds(sleepTime).format(DateTimeFormatter.ofPattern("HH:mm:ss")) + "开始");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         Thread.sleep(sleepTime * 1000);
         autoService.start();
         log.info("startTimer end!");
@@ -57,7 +62,11 @@ public class AutoTimer {
         // 结束进程通知
         LocalDateTime dateTime = LocalDateTime.now();
         dateTime.plusSeconds(sleepTime).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-        HttpUtil.get("https://api.day.app/w8LtxK8JtqnF6LoyJrALg8/打卡任务初始化/预计在" + dateTime.plusSeconds(sleepTime).format(DateTimeFormatter.ofPattern("HH:mm:ss")) + "开始");
+        try {
+            HttpUtil.get("https://api.day.app/w8LtxK8JtqnF6LoyJrALg8/打卡任务初始化/预计在" + dateTime.plusSeconds(sleepTime).format(DateTimeFormatter.ofPattern("HH:mm:ss")) + "开始");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         Thread.sleep(sleepTime * 1000);
         autoService.start();
         log.info("offWorkTimer end!");

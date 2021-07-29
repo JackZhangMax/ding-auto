@@ -1,7 +1,6 @@
 package com.zml.dingauto.service;
 
 import cn.hutool.http.HttpUtil;
-import cn.hutool.json.JSON;
 import cn.hutool.json.JSONUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;
@@ -32,6 +31,7 @@ public class AutoTimer {
         log.info("startTimer start!");
         if (!getWorkingDay()){
             log.info("老子今天不上班");
+            return;
         }
         Random r = new Random();
         long sleepTime = r.nextInt(420 - 10 + 1) + 10;
@@ -55,6 +55,7 @@ public class AutoTimer {
         log.info("offWorkTimer start!");
         if (!getWorkingDay()){
             log.info("老子今天不上班");
+            return;
         }
         Random r = new Random();
         long sleepTime = r.nextInt(1800 - 10 + 1) + 10;
@@ -76,12 +77,12 @@ public class AutoTimer {
      * 获取今天是不是工作日
      * @return
      */
-    public Boolean getWorkingDay(){
+    public static Boolean getWorkingDay(){
         // 结束进程通知
         LocalDateTime dateTime = LocalDateTime.now();
-        dateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        String dateTimeStr = dateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         try {
-            String resp = HttpUtil.get("http://timor.tech/api/holiday/info/" + dateTime);
+            String resp = HttpUtil.get("http://timor.tech/api/holiday/info/" + dateTimeStr);
             TimorResp timorResp = JSONUtil.toBean(resp, TimorResp.class);
             if (Arrays.asList(0,3).contains(timorResp.getType().getType())){
                 return true;

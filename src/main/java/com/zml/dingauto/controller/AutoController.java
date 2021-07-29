@@ -1,19 +1,14 @@
 package com.zml.dingauto.controller;
 
-import cn.hutool.core.net.Ipv4Util;
-import cn.hutool.core.net.NetUtil;
 import cn.hutool.extra.servlet.ServletUtil;
 import com.zml.dingauto.service.AutoService;
-import com.zml.dingauto.service.BaseException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import sun.net.util.IPAddressUtil;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 /**
  * @author zhangmingliang

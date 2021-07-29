@@ -59,6 +59,8 @@ public class AutoService {
         log.info("正在回到主界面:");
         countdown(2L);
         executeCommand("adb shell input keyevent 3");
+        countdown(2L);
+        executeCommand("adb shell input keyevent 3");
         log.info("正在打开钉钉:");
         countdown(15L);
         // 打开钉钉(模拟点击)
@@ -69,6 +71,7 @@ public class AutoService {
         if (output.contains("SignUpWithPwdActivity")) {
             // 点击密码框
             executeCommand("adb shell input tap 300 970");
+            countdown(3L);
             // 输入密码
             executeCommand("adb shell input text qq5211314");
             // 点击登录
@@ -233,7 +236,7 @@ public class AutoService {
         log.info("正在杀死进程:");
         countdown(3L);
         // 杀死进程
-        executeCommand("adb shell input swipe 400 1500 500 1000", Boolean.FALSE);
+        executeCommand("adb shell input tap 710 2239", Boolean.FALSE);
         log.info("正在准备锁屏:");
         // 十秒后锁屏
         countdown(10L);

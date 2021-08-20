@@ -16,6 +16,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
@@ -44,8 +45,14 @@ public class AutoService {
 
     private static final String PNG_SUFFIX = ".png";
 
+    private static BigDecimal length = null;
+
+    private static BigDecimal width = null;
+
     @Async
     public void start() throws InterruptedException {
+        // 获取分辨率
+        getPhysicalSize();
         startStatus = Boolean.TRUE;
         // 获取休眠随机九分钟之内的值
         Random r = new Random();
@@ -67,11 +74,11 @@ public class AutoService {
         log.info("任务结束");
     }
 
-    public static String executeCommand(String command) throws InterruptedException {
+    public String executeCommand(String command) throws InterruptedException {
         return executeCommand(command, Boolean.TRUE);
     }
 
-    public static String executeCommand(String command, Boolean killStatus) throws InterruptedException {
+    public String executeCommand(String command, Boolean killStatus) throws InterruptedException {
         Thread.sleep(1000);
         if (!startStatus && killStatus) {
             // 结束进程通知
@@ -116,7 +123,7 @@ public class AutoService {
     }
 
     public static String inputStream2String(InputStream inputStream) throws IOException {
-        String line = "";
+        String line;
         StringBuilder sb = new StringBuilder();
 
         BufferedReader bufferedReader = new BufferedReader(
@@ -179,13 +186,13 @@ public class AutoService {
      * 杀死钉钉进程
      * @throws InterruptedException
      */
-    public static void killDing() throws InterruptedException {
+    public void killDing() throws InterruptedException {
         // 进入多任务界面
         executeCommand("adb shell input keyevent 187", Boolean.FALSE);
         log.info("正在杀死进程:");
         countdown(3L);
-        // 杀死进程
-        executeCommand("adb shell input tap 710 2239", Boolean.FALSE);
+        // 杀死进程(需要自己定位)
+        executeCommand("adb shell input tap " + getLocation(0.493, 0.874), Boolean.FALSE);
         log.info("正在准备锁屏:");
         // 十秒后锁屏
         countdown(10L);
@@ -237,19 +244,19 @@ public class AutoService {
     public void openDing() {
 
         try {
-            // 打开钉钉(模拟点击)
-            executeCommand("adb shell input tap 108 1443");
+            // 打开钉钉(模拟点击 需自己填写)
+            executeCommand("adb shell input tap " + getLocation(0.075, 0.563));
             // 判断是否登录 如果未登录输入密码登录
             String output = executeCommand("adb shell dumpsys activity top | grep ACTIVITY");
             if (output.contains("SignUpWithPwdActivity")) {
                 // 点击密码框
-                executeCommand("adb shell input tap 300 970");
+                executeCommand("adb shell input tap " + getLocation(0.208, 0.379));
                 countdown(3L);
                 // 输入密码
-                executeCommand("adb shell input text qq5211314");
+                executeCommand("adb shell input text *");
                 countdown(3L);
                 // 点击登录
-                executeCommand("adb shell input tap 670 1165");
+                executeCommand("adb shell input tap " + getLocation(0.465, 0.455));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -264,11 +271,11 @@ public class AutoService {
         try {
             countdown(6L);
             // 点击工作台
-            executeCommand("adb shell input tap 700 2460");
+            executeCommand("adb shell input tap " + getLocation(0.486, 0.961));
             // 休眠五秒
             countdown(5L);
             // 点击考勤打卡
-            executeCommand("adb shell input tap 200 1360");
+            executeCommand("adb shell input tap " + getLocation(0.139, 0.531));
             // 休眠五秒
             countdown(5L);
             // 点击打卡
@@ -303,6 +310,30 @@ public class AutoService {
         } catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    /**
+     * 获取手机尺寸
+     * @throws InterruptedException
+     */
+    public void getPhysicalSize() throws InterruptedException {
+        if (length == null) {
+            String output = executeCommand("adb shell wm size");
+            String value = output.substring(15, output.length() - 2);
+            String[] physicalSize = value.split("x");
+            width = new BigDecimal(physicalSize[0]);
+            length = new BigDecimal(physicalSize[1]);
+        }
+    }
+
+    /**
+     * 获取点击位置
+     * @param x
+     * @param y
+     * @return
+     */
+    public String getLocation(Double x, Double y) {
+        return new BigDecimal(x).multiply(width).setScale(0, BigDecimal.ROUND_UP).toString() + " " + new BigDecimal(y).multiply(length).setScale(0, BigDecimal.ROUND_UP);
     }
 
 

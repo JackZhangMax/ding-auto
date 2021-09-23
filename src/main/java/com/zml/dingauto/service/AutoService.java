@@ -9,6 +9,7 @@ import com.zml.dingauto.util.CommandUtil;
 import com.zml.dingauto.util.DateUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
@@ -33,11 +34,6 @@ public class AutoService {
     private static Boolean startStatus = Boolean.TRUE;
     private static final Boolean clockInSwitch = Boolean.TRUE;
 
-    //设置APPID/AK/SK
-    public static final String APP_ID = "";
-    public static final String API_KEY = "";
-    public static final String SECRET_KEY = "";
-
     private static final String SCREEN_PATH = "D:/work/ding-auto/screen/";
 
     private static final String EXEC_CMD = "adb exec-out screencap -p";
@@ -48,7 +44,14 @@ public class AutoService {
 
     private static BigDecimal width = null;
 
-    private static String dingUrl = "";
+    @Value("${penetrate.url}")
+    private String penetrateUrl;
+    @Value("${baidu.ocr.appId}")
+    private String appId;
+    @Value("${baidu.ocr.apiKey}")
+    private String apiKey;
+    @Value("${baidu.ocr.secretKey}")
+    private String secretKey;
 
     private static Boolean status = Boolean.TRUE;
 
@@ -124,7 +127,7 @@ public class AutoService {
         HashMap<String, String> options = new HashMap<>();
         options.put("language_type", "CHN_ENG");
         // 初始化一个AipOcr
-        AipOcr client = new AipOcr(APP_ID, API_KEY, SECRET_KEY);
+        AipOcr client = new AipOcr(appId, apiKey, secretKey);
         JSONObject res = client.basicGeneral(screenshotPath, options);
         log.info("basicGeneral resp = {}", res);
         BaiduOcrResp baiduOcrResp = JSONUtil.toBean(res.toString(), BaiduOcrResp.class);
@@ -134,7 +137,7 @@ public class AutoService {
             HttpUtil.get("https://api.day.app/w8LtxK8JtqnF6LoyJrALg8/打卡成功" + num.size() + "次/内容:"+num.toString());
         } else {
             // 打卡失败通知
-            HttpUtil.get("https://api.day.app/w8LtxK8JtqnF6LoyJrALg8/打卡失败?url=" + dingUrl + "/getScreen/" + fileName);
+            HttpUtil.get("https://api.day.app/w8LtxK8JtqnF6LoyJrALg8/打卡失败?url=" + penetrateUrl + "/getScreen/" + fileName);
         }
         return num.size();
     }

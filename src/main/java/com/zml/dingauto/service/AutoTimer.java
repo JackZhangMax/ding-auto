@@ -25,6 +25,8 @@ public class AutoTimer {
 
     @Resource
     private AutoService autoService;
+    @Resource
+    private PenetrateService penetrateService;
 
     @Scheduled(cron = "0 20 9 * * *")
     public void startTimer () throws InterruptedException {
@@ -93,4 +95,14 @@ public class AutoTimer {
         }
         return false;
     }
+
+    @Scheduled(cron = "0 0/1 * * * ?")
+    public void penetrate() throws InterruptedException {
+        Boolean status = penetrateService.checkPenetrateStatus();
+        log.info("checkPenetrateStatus start status = {}", status);
+        if (!status){
+            penetrateService.startPenetrate();
+        }
+    }
+
 }

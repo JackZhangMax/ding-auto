@@ -7,11 +7,15 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.websocket.server.PathParam;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -49,6 +53,11 @@ public class AutoController {
         return "成功";
     }
 
+    @GetMapping("getScreen/{filePath}")
+    public void getScreen(@PathVariable("filePath") String filePath, HttpServletResponse response) throws IOException {
+        autoService.getScreen(response, filePath);
+    }
+
     @GetMapping("test")
     public List<String> test() throws ExecutionException, InterruptedException {
         List<String> a = new ArrayList<>();
@@ -70,6 +79,11 @@ public class AutoController {
         }
         System.out.println(b);
         return b;
+    }
+
+    @GetMapping("switchState")
+    public String switchState() {
+        return autoService.switchState();
     }
 
 }

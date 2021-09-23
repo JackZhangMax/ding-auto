@@ -34,9 +34,9 @@ public class AutoService {
     private static final Boolean clockInSwitch = Boolean.TRUE;
 
     //设置APPID/AK/SK
-    public static final String APP_ID = "24324749";
-    public static final String API_KEY = "PPPN52BXGbfjkPtBnYNGDzb7";
-    public static final String SECRET_KEY = "aDidSh5kZ2qzYncmDy4O272MADGExEXN";
+    public static final String APP_ID = "";
+    public static final String API_KEY = "";
+    public static final String SECRET_KEY = "";
 
     private static final String SCREEN_PATH = "D:/work/ding-auto/screen/";
 
@@ -48,7 +48,7 @@ public class AutoService {
 
     private static BigDecimal width = null;
 
-    private static String dingUrl = "http://zml.vaiwan.com/";
+    private static String dingUrl = "";
 
     private static Boolean status = Boolean.TRUE;
 

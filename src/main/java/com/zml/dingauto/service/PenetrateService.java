@@ -3,6 +3,7 @@ package com.zml.dingauto.service;
 import cn.hutool.http.HttpUtil;
 import com.zml.dingauto.util.CommandUtil;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 /**
@@ -34,6 +35,7 @@ public class PenetrateService {
      * 启动内网穿透
      * @throws InterruptedException
      */
+    @Async
     public void startPenetrate() throws InterruptedException {
         CommandUtil.executeCommand("ding -config=D:\\work\\pierced\\windows_64\\ding.cfg -subdomain=zml 80");
     }

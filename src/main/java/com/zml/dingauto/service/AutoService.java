@@ -31,9 +31,6 @@ import java.util.stream.Collectors;
 @Service
 public class AutoService {
 
-    private static Boolean startStatus = Boolean.TRUE;
-    private static final Boolean clockInSwitch = Boolean.TRUE;
-
     private static final String SCREEN_PATH = "D:/work/ding-auto/screen/";
 
     private static final String EXEC_CMD = "adb exec-out screencap -p";
@@ -55,14 +52,17 @@ public class AutoService {
 
     private static Boolean status = Boolean.TRUE;
 
+    private static Boolean lock = Boolean.TRUE;
+
     @Async
     public void start() throws InterruptedException {
-        if (!status){
+        if (!status || !lock) {
+            log.info("exit! status = {}, lock = {}", status, lock);
             return;
         }
+        lock = Boolean.FALSE;
         // 获取分辨率
         getPhysicalSize();
-        startStatus = Boolean.TRUE;
         // 获取休眠随机九分钟之内的值
         Random r = new Random();
         log.info("任务开始!");
@@ -134,11 +134,12 @@ public class AutoService {
         List<String> num = baiduOcrResp.getWords_result().stream().map(BaiduOcrResp.WordResult::getWords).filter(words -> words.contains("已打卡")).collect(Collectors.toList());
         if (num.size() > 0) {
             // 打卡成功通知
-            HttpUtil.get("https://api.day.app/w8LtxK8JtqnF6LoyJrALg8/打卡成功" + num.size() + "次/内容:"+num.toString());
+            HttpUtil.get("https://api.day.app/w8LtxK8JtqnF6LoyJrALg8/打卡成功" + num.size() + "次/内容:" + num.toString());
         } else {
             // 打卡失败通知
             HttpUtil.get("https://api.day.app/w8LtxK8JtqnF6LoyJrALg8/打卡失败?url=" + penetrateUrl + "/getScreen/" + fileName);
         }
+        lock = Boolean.TRUE;
         return num.size();
     }
 
@@ -154,7 +155,6 @@ public class AutoService {
 
     public void kill() {
 
-        startStatus = Boolean.FALSE;
     }
 
 

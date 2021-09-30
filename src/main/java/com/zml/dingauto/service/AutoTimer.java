@@ -3,6 +3,7 @@ package com.zml.dingauto.service;
 import cn.hutool.http.HttpUtil;
 import cn.hutool.json.JSONUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -27,11 +28,17 @@ public class AutoTimer {
     private AutoService autoService;
     @Resource
     private PenetrateService penetrateService;
+    @Resource
+    private NotifyService notifyService;
+
+    @Value("${bark.url}")
+    private String barkUrl;
+
 
     @Scheduled(cron = "0 20 9 * * *")
-    public void startTimer () throws InterruptedException {
+    public void startTimer() throws InterruptedException {
         log.info("startTimer start!");
-        if (!getWorkingDay()){
+        if (!getWorkingDay()) {
             log.info("老子今天不上班");
             return;
         }
@@ -42,7 +49,7 @@ public class AutoTimer {
         LocalDateTime dateTime = LocalDateTime.now();
         dateTime.plusSeconds(sleepTime).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
         try {
-            HttpUtil.get("https://api.day.app/w8LtxK8JtqnF6LoyJrALg8/打卡任务初始化/预计在" + dateTime.plusSeconds(sleepTime).format(DateTimeFormatter.ofPattern("HH:mm:ss")) + "开始");
+            notifyService.send("打卡任务初始化", "预计在" + dateTime.plusSeconds(sleepTime).format(DateTimeFormatter.ofPattern("HH:mm:ss")) + "开始");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -53,9 +60,9 @@ public class AutoTimer {
     }
 
     @Scheduled(cron = "0 30 18 * * *")
-    public void offWorkTimer () throws InterruptedException {
+    public void offWorkTimer() throws InterruptedException {
         log.info("offWorkTimer start!");
-        if (!getWorkingDay()){
+        if (!getWorkingDay()) {
             log.info("老子今天不上班");
             return;
         }
@@ -66,7 +73,7 @@ public class AutoTimer {
         LocalDateTime dateTime = LocalDateTime.now();
         dateTime.plusSeconds(sleepTime).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
         try {
-            HttpUtil.get("https://api.day.app/w8LtxK8JtqnF6LoyJrALg8/打卡任务初始化/预计在" + dateTime.plusSeconds(sleepTime).format(DateTimeFormatter.ofPattern("HH:mm:ss")) + "开始");
+            notifyService.send("打卡任务初始化", "预计在" + dateTime.plusSeconds(sleepTime).format(DateTimeFormatter.ofPattern("HH:mm:ss")) + "开始");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -79,17 +86,17 @@ public class AutoTimer {
      * 获取今天是不是工作日
      * @return
      */
-    public static Boolean getWorkingDay(){
+    public static Boolean getWorkingDay() {
         // 结束进程通知
         LocalDateTime dateTime = LocalDateTime.now();
         String dateTimeStr = dateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         try {
             String resp = HttpUtil.get("http://timor.tech/api/holiday/info/" + dateTimeStr);
             TimorResp timorResp = JSONUtil.toBean(resp, TimorResp.class);
-            if (Arrays.asList(0,3).contains(timorResp.getType().getType())){
+            if (Arrays.asList(0, 3).contains(timorResp.getType().getType())) {
                 return true;
             }
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return true;
         }
@@ -100,7 +107,7 @@ public class AutoTimer {
     public void penetrate() throws InterruptedException {
         Boolean status = penetrateService.checkPenetrateStatus();
         log.info("checkPenetrateStatus start status = {}", status);
-        if (!status){
+        if (!status) {
             penetrateService.startPenetrate();
         }
     }

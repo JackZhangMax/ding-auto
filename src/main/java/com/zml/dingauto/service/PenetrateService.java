@@ -16,6 +16,12 @@ public class PenetrateService {
 
     @Value("${penetrate.url}")
     private String penetrateUrl;
+    @Value("${penetrate.path}")
+    private String penetratePath;
+    @Value("${penetrate.prefix}")
+    private String penetratePrefix;
+    @Value("${server.port}")
+    private String serverPort;
 
 
     /**
@@ -24,8 +30,8 @@ public class PenetrateService {
      */
     public Boolean checkPenetrateStatus() {
         String result = HttpUtil.get(penetrateUrl);
-        String errorContent = "Tunnel zml.vaiwan.com not found\n";
-        if (errorContent.equals(result)){
+        String errorContent = "Tunnel " + penetratePrefix + ".vaiwan.com not found\n";
+        if (errorContent.equals(result)) {
             return Boolean.FALSE;
         }
         return Boolean.TRUE;
@@ -37,6 +43,6 @@ public class PenetrateService {
      */
     @Async
     public void startPenetrate() throws InterruptedException {
-        CommandUtil.executeCommand("ding -config=D:\\work\\pierced\\windows_64\\ding.cfg -subdomain=zml 80");
+        CommandUtil.executeCommand("ding -config=" + penetratePath + " -subdomain=" + penetratePrefix + " " + serverPort);
     }
 }

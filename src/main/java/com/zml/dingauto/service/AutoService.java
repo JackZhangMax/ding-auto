@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 import java.awt.*;
 import java.io.*;
@@ -49,10 +50,22 @@ public class AutoService {
     private String apiKey;
     @Value("${baidu.ocr.secretKey}")
     private String secretKey;
+    @Value("${device.password}")
+    private String devicePassword;
+    @Value("${coordinate.x}")
+    private Double coordinateX;
+    @Value("${coordinate.y}")
+    private Double coordinateY;
+    @Value("${ding.password}")
+    private String dingPassword;
+
 
     private static Boolean status = Boolean.TRUE;
 
     private static Boolean lock = Boolean.TRUE;
+
+    @Resource
+    private NotifyService notifyService;
 
     @Async
     public void start() throws InterruptedException {
@@ -105,8 +118,8 @@ public class AutoService {
         String originalPath = saveScreenshot("checkOriginal");
         // 判断文件大小 如果不大于零则发送失败通知
         if (FileUtil.size(FileUtil.file(originalPath)) == 0) {
-            // 结束进程通知
-            HttpUtil.get("https://api.day.app/w8LtxK8JtqnF6LoyJrALg8/截图失败");
+            // 截图失败通知
+            notifyService.send("截图失败");
             // 杀死钉钉
             killDing();
         }
@@ -134,10 +147,10 @@ public class AutoService {
         List<String> num = baiduOcrResp.getWords_result().stream().map(BaiduOcrResp.WordResult::getWords).filter(words -> words.contains("已打卡")).collect(Collectors.toList());
         if (num.size() > 0) {
             // 打卡成功通知
-            HttpUtil.get("https://api.day.app/w8LtxK8JtqnF6LoyJrALg8/打卡成功" + num.size() + "次/内容:" + num.toString());
+            notifyService.send("打卡成功" + num.size() + "次", "内容:" + num.toString());
         } else {
             // 打卡失败通知
-            HttpUtil.get("https://api.day.app/w8LtxK8JtqnF6LoyJrALg8/打卡失败?url=" + penetrateUrl + "/getScreen/" + fileName);
+            notifyService.send("打卡失败", null, penetrateUrl + "/getScreen/" + fileName);
         }
         lock = Boolean.TRUE;
         return num.size();
@@ -190,7 +203,7 @@ public class AutoService {
                 // 解锁手机
                 CommandUtil.executeAdbCommand("input keyevent 82");
                 countdown(2L);
-                CommandUtil.executeAdbCommand("input text 089089");
+                CommandUtil.executeAdbCommand("input text " + devicePassword);
                 countdown(2L);
             }
         } catch (Exception e) {
@@ -221,7 +234,7 @@ public class AutoService {
 
         try {
             // 打开钉钉(模拟点击 需自己填写)
-            CommandUtil.executeAdbCommand("input tap " + getLocation(0.075, 0.563));
+            CommandUtil.executeAdbCommand("input tap " + getLocation(coordinateX, coordinateY));
 //            CommandUtil.executeAdbCommand("input tap " + getLocation(0.648, 0.385));
             // 判断是否登录 如果未登录输入密码登录
             String output = CommandUtil.executeAdbCommand("dumpsys activity top | grep ACTIVITY");
@@ -230,7 +243,7 @@ public class AutoService {
                 CommandUtil.executeAdbCommand("input tap " + getLocation(0.208, 0.379));
                 countdown(3L);
                 // 输入密码
-                CommandUtil.executeAdbCommand("input text qq5211314");
+                CommandUtil.executeAdbCommand("input text " + dingPassword);
                 countdown(3L);
                 // 返回
                 CommandUtil.executeAdbCommand("input keyevent 4");

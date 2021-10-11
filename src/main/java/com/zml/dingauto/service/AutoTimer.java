@@ -31,9 +31,6 @@ public class AutoTimer {
     @Resource
     private NotifyService notifyService;
 
-    @Value("${bark.url}")
-    private String barkUrl;
-
 
     @Scheduled(cron = "0 20 9 * * *")
     public void startTimer() throws InterruptedException {

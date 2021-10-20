@@ -2,7 +2,6 @@ package com.zml.dingauto.service;
 
 import cn.hutool.core.img.ImgUtil;
 import cn.hutool.core.io.FileUtil;
-import cn.hutool.http.HttpUtil;
 import cn.hutool.json.JSONUtil;
 import com.baidu.aip.ocr.AipOcr;
 import com.zml.dingauto.util.CommandUtil;
@@ -16,7 +15,8 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 import java.awt.*;
-import java.io.*;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
@@ -68,34 +68,45 @@ public class AutoService {
     private NotifyService notifyService;
 
     @Async
-    public void start() throws InterruptedException {
-        if (!status || !lock) {
-            log.info("exit! status = {}, lock = {}", status, lock);
-            return;
+    public void start() {
+        try {
+            if (!status || !lock) {
+                log.info("exit! status = {}, lock = {}", status, lock);
+                return;
+            }
+            lock = Boolean.FALSE;
+            // 检测设备是否在线
+            checkDeviceStatus();
+            // 获取分辨率
+            getPhysicalSize();
+            // 获取休眠随机九分钟之内的值
+            Random r = new Random();
+            log.info("任务开始!");
+            // 解锁手机
+            unlock();
+            log.info("解锁手机完成");
+            home();
+            log.info("已回到主界面");
+            countdown(10L);
+            log.info("钉钉将在10秒后打开");
+            openDing();
+            log.info("已打开钉钉");
+            checkResult();
+            log.info("校验打卡结果完成");
+            long killDingTime = r.nextInt(20 - 10 + 1) + 10;
+            log.info("将在" + killDingTime + "秒后杀死进程");
+            countdown(killDingTime);
+            // 杀死钉钉
+            killDing();
+            log.info("任务结束");
+
+            lock = Boolean.TRUE;
+        } catch (Exception e) {
+            // 发送失败通知
+            notifyService.send("打卡失败", e.getMessage());
+            e.printStackTrace();
+            lock = Boolean.TRUE;
         }
-        lock = Boolean.FALSE;
-        // 获取分辨率
-        getPhysicalSize();
-        // 获取休眠随机九分钟之内的值
-        Random r = new Random();
-        log.info("任务开始!");
-        // 解锁手机
-        unlock();
-        log.info("解锁手机完成");
-        home();
-        log.info("已回到主界面");
-        countdown(10L);
-        log.info("钉钉将在10秒后打开");
-        openDing();
-        log.info("已打开钉钉");
-        checkResult();
-        log.info("校验打卡结果完成");
-        long killDingTime = r.nextInt(20 - 10 + 1) + 10;
-        log.info("将在" + killDingTime + "秒后杀死进程");
-        countdown(killDingTime);
-        // 杀死钉钉
-        killDing();
-        log.info("任务结束");
     }
 
 
@@ -152,16 +163,11 @@ public class AutoService {
             // 打卡失败通知
             notifyService.send("打卡失败", null, penetrateUrl + "/getScreen/" + fileName);
         }
-        lock = Boolean.TRUE;
         return num.size();
     }
 
     public static void main(String[] args) throws InterruptedException {
-        Random r = new Random();
-        for (int i = 0; i < 100; i++) {
-            long sleepTime = r.nextInt(420 - 120 + 1) + 120;
-            log.info(String.valueOf(sleepTime));
-        }
+        System.out.println(CommandUtil.executeCommand("adb devices"));
 
 
     }
@@ -338,5 +344,20 @@ public class AutoService {
     public String switchState() {
         status = !status;
         return status.toString();
+    }
+
+    /**
+     * 检测设备状态
+     */
+    public void checkDeviceStatus() {
+        try {
+            String output = CommandUtil.executeCommand("adb devices");
+            if (!output.contains("*") && output.length() < 30) {
+                throw new BaseException("设备不在线");
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
     }
 }

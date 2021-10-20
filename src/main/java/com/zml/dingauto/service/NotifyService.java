@@ -33,7 +33,7 @@ public class NotifyService {
             // bark通知
             if (!StrUtil.isEmpty(barkUrl)) {
                 if (StrUtil.isEmpty(url)) {
-                    HttpUtil.get(barkUrl + title + "/" + content);
+                    HttpUtil.get(barkUrl + title + (StrUtil.isEmpty(content) ? "" : "/" + content));
                 } else {
                     HttpUtil.get(barkUrl + title + "?url=" + url);
                 }
